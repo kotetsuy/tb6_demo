@@ -60,14 +60,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define P1_Pin GPIO_PIN_0
-#define P1_GPIO_Port GPIOA
-#define P1A1_Pin GPIO_PIN_1
-#define P1A1_GPIO_Port GPIOA
-#define P2_Pin GPIO_PIN_2
-#define P2_GPIO_Port GPIOA
-#define P3_Pin GPIO_PIN_3
-#define P3_GPIO_Port GPIOA
 #define P4_Pin GPIO_PIN_6
 #define P4_GPIO_Port GPIOA
 #define P5_Pin GPIO_PIN_7
@@ -76,6 +68,14 @@ void Error_Handler(void);
 #define P6_GPIO_Port GPIOB
 #define P7_Pin GPIO_PIN_1
 #define P7_GPIO_Port GPIOB
+#define P0_Pin GPIO_PIN_6
+#define P0_GPIO_Port GPIOB
+#define P1_Pin GPIO_PIN_7
+#define P1_GPIO_Port GPIOB
+#define P2_Pin GPIO_PIN_8
+#define P2_GPIO_Port GPIOB
+#define P3_Pin GPIO_PIN_9
+#define P3_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
