@@ -63,23 +63,15 @@ static void WriteCC2TIM(uint16_t *in);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-LEDHandle_t LEDs[LEDNUM] = {
-  {PI,},
-  {3.0F/4.0F*PI,},
-  {PI/2.0F,},
-  {PI/4.0F,}, 
-  {0.0F,},
-  {PI/4.0F,},
-  {PI/2.0F,},
-  {3.0F/4.0F*PI,},
-};
 float32_t fout[LEDNUM];
 uint16_t ccout[LEDNUM];
 LEDFuncs_t LEDFuncs_p[LEDFUNCNUM] = {
   LEDWave1,
-  LEDBlink,
   LEDWave2,
   LEDBlinkSlow,
+  LEDWave3,
+  LEDWave4,
+  LEDBlink,
 };
 /* USER CODE END 0 */
 
@@ -133,11 +125,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    for (i = 0; i < 100; i++) {
-      LEDFuncs_p[j](fout, LEDs);
+    for (i = 0; i < 400; i++) { // 8sec
+      LEDFuncs_p[j](fout);
       ConvF2CC(ccout, fout);
       WriteCC2TIM(ccout);
-      HAL_Delay(50);
+      HAL_Delay(20); // 50fps
     }
     j++;
     j = (j >= LEDFUNCNUM) ? 0 : j;
